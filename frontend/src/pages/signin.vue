@@ -172,7 +172,7 @@ const validateRegistrationNumber = () => {
               <v-card-actions class="justify-end">
                 <button color="primary" @click="toggleForm">
                   <span class="toggleButton">{{
-                    data.showAlternativeLoginFrom ? $t("login.CodeLogin") : $t("login.RegisterNumberLogin")
+                    !data.showAlternativeLoginFrom ? $t("login.CodeLogin") : $t("login.RegisterNumberLogin")
                   }}</span>
                 </button>
               </v-card-actions>
