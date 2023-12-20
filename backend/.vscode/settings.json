@@ -1,0 +1,14 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.suggest.insertMode": "replace",
+  "editor.snippetSuggestions": "none",
+  "javascript.suggest.names": true,
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.selectionMode": "whenTriggerCharacter",
+  "editor.acceptSuggestionOnCommitCharacter": false
+}

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "lib": ["es2019", "dom"],
+    "module": "es2020",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "types": ["vite/client"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "disableSizeLimit": true,
+    "skipLibCheck": true,
+    "maxNodeModuleJsDepth": 0
+  },
+  "include": [
+    "./types/*.d.ts",
+    "./src/**/*.js",
+    "./src/**/*.vue",
+    "./node_modules/vue-i18n/dist/vue-i18n.d.ts",
+    "./node_modules/vuetify/dist/vuetify.d.ts"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+    "formulahendry.auto-close-tag",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "lukas-tr.materialdesignicons-intellisense",
+    "antfu.iconify",
+    "formulahendry.auto-rename-tag",
+    "naumovs.color-highlight",
+    "yoavbls.pretty-ts-errors"
+  ]
+}
