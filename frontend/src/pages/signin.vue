@@ -18,13 +18,13 @@ const data = reactive({
   code: "",
   lastName: "",
   registrationNumber: "",
-  showLoginForm: true,
+  showAlternativeLoginFrom: true,
 });
 
 const { valid, registrationNumber } = toRefs(data);
 
 async function submit() {
-  if (data.showLoginForm) {
+  if (data.showAlternativeLoginFrom) {
     if (data.phoneNumberExists) {
       loginWithCode();
     } else {
@@ -84,7 +84,7 @@ async function loginWithRegistrationNumber() {
 }
 
 function toggleForm() {
-  data.showLoginForm = !data.showLoginForm;
+  data.showAlternativeLoginFrom = !data.showAlternativeLoginFrom;
 }
 
 const registrationNumberRule = (/** @type {string} */ value) => {
@@ -109,9 +109,9 @@ const validateRegistrationNumber = () => {
           </v-card-title>
 
           <transition name="fade" mode="out-in">
-            <div :key="String(data.showLoginForm)">
+            <div :key="String(data.showAlternativeLoginFrom)">
               <v-form @submit.prevent="submit" v-model="data.valid">
-                <v-card-text class="px-6" v-if="data.showLoginForm">
+                <v-card-text class="px-6" v-if="data.showAlternativeLoginFrom">
                   <v-phone-input
                     defaultCountry="fr"
                     v-model="data.phone"
@@ -163,7 +163,7 @@ const validateRegistrationNumber = () => {
                     :disabled="!(data.valid && (data.phone || (data.lastName && data.registrationNumber)))"
                     color="secondary"
                   >
-                    {{ data.showLoginForm ? $t("login.sendCode") : $t("login.submit") }}
+                    {{ data.showAlternativeLoginFrom ? $t("login.sendCode") : $t("login.submit") }}
                   </v-btn>
                 </v-card-actions>
               </v-form>
@@ -172,7 +172,7 @@ const validateRegistrationNumber = () => {
               <v-card-actions class="justify-end">
                 <button color="primary" @click="toggleForm">
                   <span class="toggleButton">{{
-                    !data.showLoginForm ? $t("login.CodeLogin") : $t("login.RegisterNumberLogin")
+                    data.showAlternativeLoginFrom ? $t("login.CodeLogin") : $t("login.RegisterNumberLogin")
                   }}</span>
                 </button>
               </v-card-actions>
